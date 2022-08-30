@@ -5,3 +5,4 @@ export { default as CreateForm } from './createForm'
 
 export { default as ReportTable } from './reportTable'
 export { default as Footer } from './footer'
+export { default as CookieStandAdmin } from './cookieStandAdmin'
