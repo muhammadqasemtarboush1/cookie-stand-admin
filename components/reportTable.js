@@ -17,7 +17,6 @@ export default function ReportTable({ cookiesStands }) {
                             )
                         })
                         }
-
                         <th scope="col" className="px-6 py-3 rounded-r-lg">
                             Total
                         </th>
@@ -50,7 +49,5 @@ export default function ReportTable({ cookiesStands }) {
                 </tfoot>
             </table >
         </div >
-
-
     )
 }
