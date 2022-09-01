@@ -2,33 +2,48 @@
 
 import { createContext, useState } from "react";
 import axios from 'axios';
-// 1.1  create the context 
+import jwt from 'jsonwebtoken'
 export const AuthContext = createContext();
-// 1.2  create the context wrapper // provider
 
 
-export function AuthWrapper({ children }) {
-    // I need tokens and login funciton to be global
+
+export function AuthWrapper(props) {
+
     const [globalState, setGlobalState] = useState({
         tokens: null,
-
+        userData: null,
         login,
+        logout,
     })
-    // create login function that will send request to the server and recive a token, I need to update the state
+
     async function login(userInfo) {
-        const url = "https://cookie-api-1.herokuapp.com/api/token/";
+        const url = process.env.NEXT_PUBLIC_BACKEND_URL + "api/token/";
         const res = await axios.post(url, userInfo);
-        console.log(11111, res)
+        const decodedToken = jwt.decode(res.data.access)
+
         setGlobalState({
             tokens: res.data,
             login,
+            userData: {
+                username: userInfo.username,
+                id: decodedToken.user_id
+            }
         })
+    }
+
+    function logout() {
+        // setGlobalState({
+        //     tokens: null,
+        //     userData: null
+        // })
+        console.log(logout);
+
     }
 
     return (
         <>
             <AuthContext.Provider value={globalState}>
-                {children}
+                {props.children}
             </AuthContext.Provider>
         </>
     )

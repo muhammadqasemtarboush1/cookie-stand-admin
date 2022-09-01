@@ -12,5 +12,21 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## In app V1
 
-![app.js](./public/app.png)
-![app](./public/app2.png)
+![app.js](./public/assets/app.png)
+![app](./public/assets/app2.png)
+
+## In app V1.2
+
+![app.js](./public/assets/home.png)
+
+![app](./public/assets/2data.png)
+
+![app](./public/assets/afterdelete.png)
+
+## Contribute with
+
+[Yousef](https://github.com/Yousef-010)
+
+## Recurses
+
+[Login Form](https://twitter.com/framansi)
